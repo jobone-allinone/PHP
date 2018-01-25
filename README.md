@@ -19,7 +19,7 @@ PHPの特徴として
 
 ## PHPの基礎
 
-XAMMPまたはMAMMPがインストール済のPCで「hello.php」を作成して、以下のコードを記述してください。
+XAMMPまたはMAMPがインストール済のPCで「hello.php」を作成して、以下のコードを記述してください。
 
 ```php
 <?php 
