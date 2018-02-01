@@ -56,3 +56,35 @@ foreach($address as $key => $value) {
 ```
 
 ![forachasarray](https://user-images.githubusercontent.com/35711528/35656990-7b7b4824-073d-11e8-9253-760191a1454d.png)
+
+## 課題
+```php
+$posts = array(
+  0 => array(
+    "post_title" => "最初の記事",
+    "post_excerpt" => "記事の抜粋",
+    "post_date" => "2018/01/31",
+    "post_author" => "田村"
+  ),
+  1 => array(
+    "post_title" => "2番目の記事",
+    "post_excerpt" => "記事の抜粋2",
+    "post_date" => "2018/02/01",
+    "post_author" => "大里"
+  )
+);
+
+```
+上記の連想配列について以下のhtmlコードが出力されるようなphpコードをforeachを用いて記述してください。
+```html
+  <div class='post'>
+    <h1>最初の記事</h1>
+    <p>記事の抜粋</p>
+    <div class='post-meta'>Published on 2018/01/31 by 田村 </div>
+  </div>
+  <div class='post'>
+    <h1>2番目の記事</h1>
+    <p>記事の抜粋2</p>
+    <div class='post-meta'>Published on 2018/02/01 by 大里 </div>
+  </div>
+```
