@@ -1,62 +1,58 @@
-## 繰り返し処理 for文について
-以下が基本的な繰り返し処理 for文の書き方です。
+## 配列とforeach
+
+配列とは複数の値を収めることができるものである。仕切りのある入れ物のようなものととらえるとイメージしやすいでしょう。
+
+仕切りで区別されたスペースは、数値または文字列で名前を付けることが可能です。数値で識別される配列を「配列」、文字列で識別される配列を「連想配列」と呼びます。
+
 ```php
-for (初期化式; ループ継続条件式; 増減式) {
-    //ループ内で実行する処理
+$staffs = ['田村', '大里', '細川', '池田']
+
+$address = [
+    '田村' => '東京都',
+    '大里' => '茨城県',
+    '細川' => '長野県',
+    '池田' => '埼玉県',
+];
+```
+![配列](https://user-images.githubusercontent.com/35711528/35656505-1f7f0134-073b-11e8-80c5-aeb54205f36e.png)
+![連想](https://user-images.githubusercontent.com/35711528/35656511-255d4bb0-073b-11e8-9f8e-7bdda9e4af9d.png)
+
+
+foreachは指定された配列・連想配列の要素を取り出して、先頭から順番に処理をする。
+
+foreach（配列）
+```php
+foreach(配列 as 値変数) {
+// ループ内で実行する処理
 }
 ```
 
-具体例を見ていきましょう。
 ```php
-<select name="age" id="age">
-<?php
-    for($i = 10; $i <= 70; $i++) {
-        echo "<option value='{$i}'>{$i}歳</option>";
-    }
-?>
-</select>
-```
-
-上記のコードは以下のように表示されます。
-
-![for文](https://user-images.githubusercontent.com/20413609/35371050-1ceea660-01d5-11e8-8a99-cf897be0e7ea.png)
-
-## 繰り返し処理 while文について
-WordPressにてよく使用される繰り返し処理while文の書き方です。
-```php
-while(条件式) {
-    // 条件がtrueの間繰り返す
+$staffs = ['田村', '大里', '細川', '池田']
+foreach($staffs as $staff){
+    echo $staff;
 }
 ```
 
-具体例を見ていきましょう。
+![foreacharray](https://user-images.githubusercontent.com/35711528/35656521-2c216f6c-073b-11e8-8845-a94bd57517c6.png)
+
+foreach（連想配列）
 ```php
-<select name="age" id="age">
-<?php
-    $i = 10;
-    while($i <= 70) {
-        echo "<option value='{$i}'>{$i}歳</option>";
-        $i++;
-    }
-    
-?>
-</select>
+foreach(連想配列 as キー変数 => 値変数) {
+// ループ内で実行する処理
+}
 ```
-上記のコードはfor文で出した例と同じ表示がされます。
-
-WordPressでは以下のような書き方がよく使われています。
 ```php
-<?php while(条件): ?>
-… ここが繰り返したい処理 ...
-<?php endwhile; ?>
+$address = [
+    '田村' => '東京都',
+    '大里' => '茨城県',
+    '細川' => '長野県',
+    '池田' => '埼玉県',
+];
+
+foreach($address as $key => $value) {
+    echo "{$key}さんは{$value}出身です。";
+}
 ```
 
-## 課題
-for文またはwhile文を用いて今月の日にちのセレクトボックスを表示してください。
-
-表示される結果は以下のようにしてください。
-
-![date](https://user-images.githubusercontent.com/20413609/35371071-3ab74c7e-01d5-11e8-849e-aa952bb5c735.png)
-
-**ヒント
-date関数を使ってみよう。調べてみよう。
+![forachasarray](https://user-images.githubusercontent.com/35711528/35656553-57cbc734-073b-11e8-97b0-e7183e0bea71.png)
